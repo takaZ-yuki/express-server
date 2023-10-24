@@ -1,0 +1,30 @@
+@port = 3000
+@uuid = e8576f11-9046-4a89-a3a0-dcbeeab9c5dc
+
+####
+
+GET http://localhost:{{ port }} HTTP/1.1
+
+
+####
+
+PUT http://localhost:{{ port }} HTTP/1.1
+content-type: application/json
+
+{
+    "title": "test2"
+}
+
+####
+
+POST http://localhost:{{ port }}/{{ uuid }} HTTP/1.1
+content-type: application/json
+
+{
+    "title": "testtest"
+    , "status":"wip"
+}
+
+####
+
+DELETE http://localhost:{{ port }}/{{ uuid }} HTTP/1.1
